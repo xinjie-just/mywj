@@ -33,16 +33,29 @@ $("#back").on("click", function () {
     history.go(-1);
 });
 
-/*其他部分(qq和回到顶部的位置)*/
 // 重新加载页面时
 $(function () {
     setOthersOption();
     matchUrl();
+    setMainHeight();
 });
 //页面缩放时
 $(window).resize(function () {
     setOthersOption();
+    setMainHeight();
 });
+
+// 保证页面 main 部分不会被 header 和 footer  部分遮挡
+function setMainHeight() {
+    var headerHeight = $("#header").outerHeight();
+    var footerHeight = $("#footer").outerHeight();
+    $("#main").css({
+        "padding-top": headerHeight,
+        "padding-bottom": footerHeight
+    });
+}
+
+/*其他部分(qq和回到顶部的位置)*/
 function setOthersOption() {
     if ($(window).outerWidth() > 767) {
         $(".others").css({

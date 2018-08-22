@@ -58,7 +58,7 @@ html {
   box-sizing: border-box;
 }
 
-body, .nav-wrapper, #header, #homeFooter, .inline-classify, #footer {
+body, .nav-wrapper, #header, #footer, .inline-classify {
   width: 100%;
   max-width: 767px;
   margin-right: auto;
@@ -467,20 +467,17 @@ label.error {
 
 /*头部*/
 #header {
-  z-index: 1;
+  z-index: 20;
   height: 0.44rem;
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
   background-color: #fff;
   box-shadow: inset 0 -1px 0 0 #ddd;
 }
 #header .heading h1 {
-  z-index: 2;
+  z-index: 21;
   position: absolute;
   width: 100%;
-  height: 0.44rem;
   line-height: 0.44rem;
   padding-left: 0.88rem;
   padding-right: 0.88rem;
@@ -489,12 +486,11 @@ label.error {
   text-align: center;
 }
 #header .heading #back {
-  z-index: 3;
+  z-index: 22;
   position: absolute;
   top: 0;
   left: 0;
   width: 0.88rem;
-  height: 0.44rem;
   line-height: 0.44rem;
   text-align: center;
   color: #666;
@@ -504,12 +500,11 @@ label.error {
   margin-right: .04rem;
 }
 #header .heading #menu {
-  z-index: 3;
+  z-index: 23;
   position: absolute;
   top: 0;
   right: 0;
   width: 0.44rem;
-  height: 0.44rem;
   line-height: 0.44rem;
   text-align: center;
 }
@@ -518,13 +513,14 @@ label.error {
   font-size: .2rem;
 }
 
-main {
-  padding-top: .44rem;
+#container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 #main {
-  padding-bottom: .7rem;
-  overflow-y: auto;
+  flex: 1;
 }
 
 /*主要内容*/
@@ -532,7 +528,8 @@ main {
   padding-top: .2rem;
   padding-bottom: .2rem;
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -701,7 +698,7 @@ section.our-advantage .advantage-list li:nth-of-type(even):before {
   background-color: #f00;
 }
 section.our-advantage .advantage-list li:nth-of-type(odd):before {
-  background-color: #fd0000;
+  background-color: #ff9999;
 }
 section.our-advantage .advantage-list li:nth-of-type(1):before {
   content: "1";
@@ -991,14 +988,18 @@ section.news .content li time {
 }
 
 /*底部*/
-#homeFooter {
+#footer {
+  z-index: 20;
+  position: fixed;
+  bottom: 0;
   padding-top: .15rem;
   padding-bottom: .15rem;
   background-color: #999;
 }
-#homeFooter small {
+#footer small {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   text-align: center;
@@ -1040,7 +1041,8 @@ section.news .content li time {
 /*===支付,产品详情===*/
 article:not(.news-article) {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   font-size: .14rem;
@@ -1119,7 +1121,8 @@ article:not(.news-article) img + div p {
 
 .news-list {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -1171,25 +1174,6 @@ article:not(.news-article) img + div p {
   line-height: 1.4;
 }
 
-#footer {
-  z-index: 20;
-  position: fixed;
-  bottom: 0;
-  padding-top: .15rem;
-  padding-bottom: .15rem;
-  background-color: #999;
-}
-#footer small {
-  display: block;
-  width: 92%;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: center;
-  font-size: .12rem;
-  color: #fff;
-  line-height: 1.6;
-}
-
 /*===新闻详情===*/
 article.news-article .heading h3 {
   width: 100%;
@@ -1202,7 +1186,8 @@ article.news-article .heading h3 {
 }
 article.news-article .heading time {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   display: block;
@@ -1211,7 +1196,8 @@ article.news-article .heading time {
 }
 article.news-article .article-content {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   font-size: .14rem;
@@ -1280,13 +1266,11 @@ article.news-article .article-content img + div p {
   border-color: #f00;
 }
 
-.content-wrapper {
-  margin-bottom: .3rem;
-}
 .content-wrapper > h2 {
   margin-top: .2rem;
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   font-size: .16rem;
@@ -1295,7 +1279,8 @@ article.news-article .article-content img + div p {
 }
 .content-wrapper > p {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   font-size: .14rem;
@@ -1314,7 +1299,8 @@ article.news-article .article-content img + div p {
 .products-list {
   margin-top: .16rem;
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -1374,7 +1360,8 @@ h3.product-details {
 /*===联系我们===*/
 .contact {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   margin-top: .16rem;
@@ -1426,7 +1413,8 @@ h3.product-details {
 
 .map {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   margin-top: .2rem;
@@ -1504,7 +1492,8 @@ h3.product-details {
 .contact-form button.submit {
   display: block;
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   margin-top: .2rem;
@@ -1522,7 +1511,8 @@ h3.product-details {
 /*===招商加盟===*/
 .know-join {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   margin-top: .2rem;
@@ -1613,7 +1603,8 @@ h3.product-details {
 .datum {
   margin-top: .2rem;
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -1622,7 +1613,8 @@ h3.product-details {
 }
 .datum .datum-info ul h3 {
   display: block;
-  width: 87.5%;
+  padding-left: 87.5%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: .1rem;
@@ -1651,7 +1643,8 @@ h3.product-details {
 
 .content-wrapper > .tips {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   margin-top: .3rem;
@@ -1663,7 +1656,8 @@ h3.product-details {
 /*===加盟专线===*/
 .join-phone {
   display: block;
-  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
   margin-right: auto;
   margin-left: auto;
   margin-top: .1rem;

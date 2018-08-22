@@ -429,9 +429,10 @@ label {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: $line-number;
 }
-@mixin center-content($width: 92%) {
+@mixin center-content($pl: 4%, $pr: 4%) {
   display: block;
-  width: $width;
+  padding-left: $pl;
+  padding-right: $pr;
   margin-right: auto;
   margin-left: auto;
 }
